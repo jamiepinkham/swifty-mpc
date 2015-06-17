@@ -55,8 +55,8 @@ class ReceiverViewController: UIViewController, MCSessionDelegate {
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!)
     {
         if let dictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? NSDictionary {
-            if let pictureData = dictionary["image"] as? NSData {
-                let image = UIImage(data: pictureData)
+            if let pictureData = dictionary["image"] as? NSData, image = UIImage(data: pictureData)
+            {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.imageView?.image = image
                 })

@@ -20,27 +20,21 @@ class FrameProcessor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     private var shouldProcessFrames: Bool = false
     
-    override init()
-    {
+    override init() {
         super.init()
     }
     
-    func beginProcessingFrames()
-    {
+    func beginProcessingFrames() {
         self.shouldProcessFrames = true
     }
     
-    func endProcessingFrames()
-    {
+    func endProcessingFrames() {
         self.shouldProcessFrames = false
     }
     
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!)
-    {
-        
-        if(self.shouldProcessFrames)
-        {
-            let timestamp: Float64 = CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        if self.shouldProcessFrames {
+            let timestamp = CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
             
             let cvImage = CMSampleBufferGetImageBuffer(sampleBuffer)
             

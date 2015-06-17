@@ -13,9 +13,9 @@ class BroadcastViewController: UIViewController, FrameProcessorDelegate {
     
     @IBOutlet var previewView: UIView?
     
-    let captureSession: AVCaptureSession = AVCaptureSession()
-    let advertisingController: MultipeerController = MultipeerController(displayName: NSUUID().UUIDString)
-    let frameProcessor: FrameProcessor = FrameProcessor()
+    let captureSession = AVCaptureSession()
+    let advertisingController = MultipeerController(displayName: NSUUID().UUIDString)
+    let frameProcessor = FrameProcessor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +26,16 @@ class BroadcastViewController: UIViewController, FrameProcessorDelegate {
         self.previewView?.layer.addSublayer(captureVideoPreviewLayer)
         
         let videoDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        if let videoDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(videoDevice, error: nil) as? AVCaptureDeviceInput
-        {
+        if let videoDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(videoDevice, error: nil) as? AVCaptureDeviceInput {
             
             self.captureSession.addInput(videoDeviceInput)
             
             let videoDataCaptureOutput = AVCaptureVideoDataOutput()
             videoDataCaptureOutput.alwaysDiscardsLateVideoFrames = true
             
-            let canAddOutput:Bool = self.captureSession.canAddOutput(videoDataCaptureOutput)
+            let canAddOutput = self.captureSession.canAddOutput(videoDataCaptureOutput)
             
-            if(canAddOutput)
-            {
+            if canAddOutput {
                 videoDataCaptureOutput.setSampleBufferDelegate(self.frameProcessor, queue: self.frameProcessor.sampleQueue)
                 frameProcessor.delegate = self
                 self.captureSession.addOutput(videoDataCaptureOutput)
@@ -69,10 +67,8 @@ class BroadcastViewController: UIViewController, FrameProcessorDelegate {
         self.advertisingController.endAdvertising()
     }
     
-    func processorDidProcessImage(_:FrameProcessor, image:UIImage?, timestamp: Float64) -> Void
-    {
-        if let theImage = image
-        {
+    func processorDidProcessImage(_:FrameProcessor, image:UIImage?, timestamp: Float64) -> Void {
+        if let theImage = image {
             self.advertisingController.distributeImage(theImage, timestamp: timestamp)
         }
     }

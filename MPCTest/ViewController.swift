@@ -27,8 +27,8 @@ class ViewController: UIViewController, MCBrowserViewControllerDelegate {
     
     @IBAction func beginListening(sender: UIButton) {
         let browserViewController = MCBrowserViewController(serviceType: "mpc-demo", session: self.session)
-        browserViewController.delegate = self;
-        browserViewController.maximumNumberOfPeers = 1;
+        browserViewController.delegate = self
+        browserViewController.maximumNumberOfPeers = 1
         self.presentViewController(browserViewController, animated: true) { () -> Void in
         }
     }

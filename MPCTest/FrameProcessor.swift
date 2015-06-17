@@ -16,7 +16,7 @@ protocol FrameProcessorDelegate {
 class FrameProcessor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     var delegate: FrameProcessorDelegate?
     
-    let sampleQueue = dispatch_queue_create("sampleQueue", DISPATCH_QUEUE_SERIAL);
+    let sampleQueue = dispatch_queue_create("sampleQueue", DISPATCH_QUEUE_SERIAL)
     
     private var shouldProcessFrames: Bool = false
     

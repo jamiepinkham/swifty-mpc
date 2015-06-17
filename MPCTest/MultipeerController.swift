@@ -15,7 +15,7 @@ class MultipeerController: NSObject, MCSessionDelegate, MCNearbyServiceAdvertise
     var nearbyAdvertiser: MCNearbyServiceAdvertiser
     
     init(displayName: String) {
-        let peerID = MCPeerID(displayName: displayName);
+        let peerID = MCPeerID(displayName: displayName)
         session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .None)
         nearbyAdvertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "mpc-demo")
         super.init()

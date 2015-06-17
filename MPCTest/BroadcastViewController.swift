@@ -62,7 +62,7 @@ class BroadcastViewController: UIViewController, FrameProcessorDelegate {
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        self.captureSession.stopRunning();
+        self.captureSession.stopRunning()
         self.frameProcessor.endProcessingFrames()
         self.advertisingController.endAdvertising()
     }

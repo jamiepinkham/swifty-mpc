@@ -16,10 +16,10 @@ class AVCaptureMultipeerVideoDataOutput: AVCaptureVideoDataOutput, AVCaptureVide
     var session: MCSession
     var nearbyAdvertiser: MCNearbyServiceAdvertiser
     
-    let sampleQueue = dispatch_queue_create("sampleQueue", DISPATCH_QUEUE_SERIAL);
+    let sampleQueue = dispatch_queue_create("sampleQueue", DISPATCH_QUEUE_SERIAL)
     
     init(displayName: String) {
-        let peerID = MCPeerID(displayName: displayName);
+        let peerID = MCPeerID(displayName: displayName)
         session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .None)
         nearbyAdvertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "mpc-demo")
         nearbyAdvertiser.startAdvertisingPeer()
@@ -32,7 +32,7 @@ class AVCaptureMultipeerVideoDataOutput: AVCaptureVideoDataOutput, AVCaptureVide
         let ciContect = CIContext(options: nil)
         let imageRef = ciContect.createCGImage(ciImage, fromRect: ciImage.extent())
         let uiImage = UIImage(CGImage: imageRef, scale: UIScreen.mainScreen().scale, orientation: .Left)
-        return uiImage;
+        return uiImage
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didDropSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {

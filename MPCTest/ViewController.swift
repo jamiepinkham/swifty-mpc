@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, MCBrowserViewControllerDelegate {
+    
+    let session: MCSession = MCSession(peer: MCPeerID(displayName: NSUUID().UUIDString))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +23,41 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func beginListening(sender: UIButton)
+    {
+        let browserViewController :MCBrowserViewController = MCBrowserViewController(serviceType: "mpc-demo", session: self.session)
+        browserViewController.delegate = self;
+        browserViewController.maximumNumberOfPeers = 1;
+        self.presentViewController(browserViewController, animated: true) { () -> Void in
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if(segue.identifier == "showReceiver")
+        {
+            let destinationViewController: ReceiverViewController = segue.destinationViewController as! ReceiverViewController
+            destinationViewController.session = self.session
+        }
+    }
+    
+    func browserViewControllerDidFinish(browserViewController: MCBrowserViewController!)
+    {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.performSegueWithIdentifier("showReceiver", sender: nil)
+        })
+    }
+    
+    // Notifies delegate that the user taps the cancel button.
+    func browserViewControllerWasCancelled(browserViewController: MCBrowserViewController!)
+    {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
+    
+    
 }
 

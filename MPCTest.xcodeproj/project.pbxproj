@@ -13,6 +13,15 @@
 		7DF723D11B310FAD00A44280 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF723D01B310FAD00A44280 /* Images.xcassets */; };
 		7DF723D41B310FAD00A44280 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DF723D21B310FAD00A44280 /* LaunchScreen.xib */; };
 		7DF723E01B310FAD00A44280 /* MPCTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF723DF1B310FAD00A44280 /* MPCTestTests.swift */; };
+		7DF723EA1B310FEA00A44280 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF723E91B310FEA00A44280 /* MultipeerConnectivity.framework */; };
+		7DF723EC1B3112CA00A44280 /* AVCaptureMultipeerVideoDataOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF723EB1B3112CA00A44280 /* AVCaptureMultipeerVideoDataOutput.swift */; };
+		7DF723EE1B3112EE00A44280 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF723ED1B3112EE00A44280 /* AVFoundation.framework */; };
+		7DF723F01B3116AF00A44280 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF723EF1B3116AF00A44280 /* CoreImage.framework */; };
+		7DF723F21B31178E00A44280 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF723F11B31178E00A44280 /* CoreMedia.framework */; };
+		7DF723F41B311FB900A44280 /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF723F31B311FB900A44280 /* BroadcastViewController.swift */; };
+		7DF723F61B311FD300A44280 /* ReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF723F51B311FD300A44280 /* ReceiverViewController.swift */; };
+		7DF723F81B3134AC00A44280 /* FrameProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF723F71B3134AC00A44280 /* FrameProcessor.swift */; };
+		7DF723FA1B31362F00A44280 /* MultipeerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF723F91B31362F00A44280 /* MultipeerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +45,15 @@
 		7DF723D91B310FAD00A44280 /* MPCTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPCTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF723DE1B310FAD00A44280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DF723DF1B310FAD00A44280 /* MPCTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCTestTests.swift; sourceTree = "<group>"; };
+		7DF723E91B310FEA00A44280 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		7DF723EB1B3112CA00A44280 /* AVCaptureMultipeerVideoDataOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVCaptureMultipeerVideoDataOutput.swift; sourceTree = "<group>"; };
+		7DF723ED1B3112EE00A44280 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7DF723EF1B3116AF00A44280 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		7DF723F11B31178E00A44280 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7DF723F31B311FB900A44280 /* BroadcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
+		7DF723F51B311FD300A44280 /* ReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverViewController.swift; sourceTree = "<group>"; };
+		7DF723F71B3134AC00A44280 /* FrameProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameProcessor.swift; sourceTree = "<group>"; };
+		7DF723F91B31362F00A44280 /* MultipeerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF723F21B31178E00A44280 /* CoreMedia.framework in Frameworks */,
+				7DF723F01B3116AF00A44280 /* CoreImage.framework in Frameworks */,
+				7DF723EE1B3112EE00A44280 /* AVFoundation.framework in Frameworks */,
+				7DF723EA1B310FEA00A44280 /* MultipeerConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +81,10 @@
 		7DF723BB1B310FAD00A44280 = {
 			isa = PBXGroup;
 			children = (
+				7DF723F11B31178E00A44280 /* CoreMedia.framework */,
+				7DF723EF1B3116AF00A44280 /* CoreImage.framework */,
+				7DF723ED1B3112EE00A44280 /* AVFoundation.framework */,
+				7DF723E91B310FEA00A44280 /* MultipeerConnectivity.framework */,
 				7DF723C61B310FAD00A44280 /* MPCTest */,
 				7DF723DC1B310FAD00A44280 /* MPCTestTests */,
 				7DF723C51B310FAD00A44280 /* Products */,
@@ -83,6 +109,11 @@
 				7DF723D01B310FAD00A44280 /* Images.xcassets */,
 				7DF723D21B310FAD00A44280 /* LaunchScreen.xib */,
 				7DF723C71B310FAD00A44280 /* Supporting Files */,
+				7DF723EB1B3112CA00A44280 /* AVCaptureMultipeerVideoDataOutput.swift */,
+				7DF723F31B311FB900A44280 /* BroadcastViewController.swift */,
+				7DF723F51B311FD300A44280 /* ReceiverViewController.swift */,
+				7DF723F71B3134AC00A44280 /* FrameProcessor.swift */,
+				7DF723F91B31362F00A44280 /* MultipeerController.swift */,
 			);
 			path = MPCTest;
 			sourceTree = "<group>";
@@ -212,7 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF723EC1B3112CA00A44280 /* AVCaptureMultipeerVideoDataOutput.swift in Sources */,
+				7DF723FA1B31362F00A44280 /* MultipeerController.swift in Sources */,
 				7DF723CC1B310FAD00A44280 /* ViewController.swift in Sources */,
+				7DF723F81B3134AC00A44280 /* FrameProcessor.swift in Sources */,
+				7DF723F41B311FB900A44280 /* BroadcastViewController.swift in Sources */,
+				7DF723F61B311FD300A44280 /* ReceiverViewController.swift in Sources */,
 				7DF723CA1B310FAD00A44280 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
